@@ -24,7 +24,7 @@ Charts live in [`charts/`](charts/) — all generated from real runs.
 
 ## License — CS50 educational use
 
-Copyright © 2026 Edison Ariel Ortiz. All rights reserved.
+Copyright © 2026 OmniReach LLC of GA. All rights reserved.
 
 Permission is granted to Harvard University's CS50 instructional staff and students enrolled in CS50 courses ("CS50") to use, reproduce, and distribute the text, charts, and code in this repository for educational, non-commercial purposes — including lectures, problem sets, sections, and coursework — with attribution to the author.
 
