@@ -21,3 +21,11 @@ Every chart in this series comes from a real run of the simulator. Every number 
 `edison-qpu` — pure stdlib Python, zero dependencies. QPU-1: 6 transmons (2×3 grid), T1 ≈ 104.3 µs, T2* ≈ 60.3 µs, single-qubit fidelity ≈ 99.91%, two-qubit ≈ 98.5%, readout ≈ 96.5%. Honest valuation: capable early-2020s NISQ behavior; practical ceiling ~20 qubits (the 2ⁿ wall is real).
 
 Charts live in [`charts/`](charts/) — all generated from real runs.
+
+## License — CS50 educational use
+
+Copyright © 2026 Edison Ariel Ortiz. All rights reserved.
+
+Permission is granted to Harvard University's CS50 instructional staff and students enrolled in CS50 courses ("CS50") to use, reproduce, and distribute the text, charts, and code in this repository for educational, non-commercial purposes — including lectures, problem sets, sections, and coursework — with attribution to the author.
+
+All other rights are reserved. No other person or organization may reproduce, redistribute, adapt, or commercially exploit this material without prior written permission from the author.
