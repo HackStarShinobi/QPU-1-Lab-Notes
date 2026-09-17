@@ -57,7 +57,7 @@ print(res.fidelity_vs_ideal())   # vs the perfect math
 
 Then GHZ-3, the three-qubit entangled state: 80.8%. Deeper circuit, more gates, more exposure to noise — fidelity drops. That degradation curve is the signature of the entire NISQ era, and my little Python machine reproduces it without being told to.
 
-Deutsch's algorithm — the first algorithm that beat classical — runs 4-for-4 on all oracles. Constant functions read 0, balanced functions read 1, exactly as the theory demands, with the noise riding along underneath.
+Deutsch's algorithm — the first algorithm that beat classical — runs 4-for-4 on all oracles. Constant functions read 0, balanced functions read 1 — up to the noise riding underneath (constant oracles measured 3.6–4.9% q0=1; balanced 93.5–93.7%).
 
 ## The wall
 

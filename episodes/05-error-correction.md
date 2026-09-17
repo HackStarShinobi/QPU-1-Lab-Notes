@@ -18,7 +18,7 @@ Now the caveats, stated plainly, because this is the friendliest possible setup 
 
 - The noise was a pure bit-flip channel. Real qubits also suffer phase errors, and this code does nothing about those. A code that handles both needs more qubits and considerably more machinery.
 - The decode was perfect classical post-processing. In a real machine you extract the syndrome by entangling ancilla qubits and measuring them — and those measurements are noisy, which means the error *detection* itself introduces errors. I paid none of that cost. This is the single biggest gap between my result and a real device.
-- No mid-circuit measurement, no faulty gates during encoding. The code got every advantage the model could give it.
+- No mid-circuit measurement. The two encoding CNOTs ran through the machine's real gate-noise model, but over a ~100 ns schedule the added error was negligible — noiseless in effect, noisy in construction. The code got every advantage the model could give it.
 
 The honest read: break-even under these conditions is a necessary milestone, not a sufficient one. It says the *idea* works. The engineering bill — noisy syndrome extraction, phase errors, fault-tolerant gadgets — still has to be paid, and nobody knows the final price yet. The follow-up experiment already queued in this vault is the honest hard version: QEC with noisy syndrome extraction, where I expect break-even to fail. That's the one that will actually teach us something, because easy wins teach you nothing about the price.
 

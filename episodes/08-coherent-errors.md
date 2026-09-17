@@ -28,7 +28,7 @@ But look at what the numbers *mean*. At depth 4, the two errors are barely disti
 
 The stochastic line, meanwhile, just plods along, linear and predictable. Randomness is honest. It tells you what it costs upfront.
 
-Two more details from the run. The coherent curve sits on a ~3.5% readout floor — the irreducible cost of the measurement chain we toured back in episode 1, present no matter how clean the gates are. And at large enough error the coherent curve stops following the quadratic and wraps around the Bloch sphere — the accumulated over-rotation literally laps itself, and the error signature folds back. The math is still exact; the curve just isn't monotonic anymore. Another reason you calibrate instead of modeling your way out.
+Two more details from the run. The stochastic curve bottoms out on a ~3.5% readout floor — the irreducible cost of the measurement chain we toured back in episode 1, present no matter how clean the gates are. And at large enough error the coherent curve stops following the quadratic and wraps around the Bloch sphere — the accumulated over-rotation literally laps itself, and the error signature folds back. The math is still exact; the curve just isn't monotonic anymore. Another reason you calibrate instead of modeling your way out.
 
 ## Why this keeps me up at night
 

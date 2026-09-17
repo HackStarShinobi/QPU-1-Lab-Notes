@@ -12,11 +12,11 @@ Hydrogen is the hello-world of quantum chemistry. Two atoms, two electrons. The 
 
 I started from nothing but the atoms: STO-3G molecular integrals computed from closed-form formulas, then a restricted Hartree-Fock reference and a two-determinant full configuration interaction (FCI) calculation to get the exact ground-state energy. At the equilibrium bond length of 0.7474 Å, my FCI says −1.1371757 Ha. The standard chemistry package PySCF says the same thing, to seven decimals. The foundation is solid — if VQE disagrees with this, VQE is wrong.
 
-Next the Hamiltonian gets mapped onto qubits via Jordan-Wigner, landing on a 16×16 matrix with 15 Pauli terms, then tapered by two Z₂ symmetries down to just 2 qubits. This is the real workflow, the same reductions a real device would use. No shortcuts.
+Next the Hamiltonian gets mapped onto qubits via Jordan-Wigner, landing on a 16×16 matrix with 15 Pauli terms (at the bond lengths charted here), then tapered by two Z₂ symmetries down to just 2 qubits. This is the real workflow, the same reductions a real device would use. No shortcuts.
 
 ## The ideal run
 
-First I ran VQE with the noise switched off. This is the "does the algorithm even work" test, and it passed completely: at every bond length along the dissociation curve, ideal VQE matched FCI to five decimals. The optimizer — plain gradient descent, nothing fancy — found the right energy every time.
+First I ran VQE with the noise switched off. This is the "does the algorithm even work" test, and it passed completely: at every bond length along the dissociation curve, ideal VQE matched FCI to five decimals. The ideal optimum came from an exhaustive grid scan — the true minimum, not an optimizer's best guess — and it found the right energy every time.
 
 That's worth pausing on. The quantum algorithm for chemistry is *correct*. The math converges. The curve I got is the textbook dissociation curve of H₂, smooth and right.
 
@@ -28,7 +28,7 @@ With realistic noise — the gate errors, T1 decay, and readout misclassificatio
 
 Chemical accuracy — the threshold where a calculation actually tells you something useful about chemistry — is 1.6 mHa.
 
-Read those two numbers again. We're not off by a little. We're off by a factor of twenty to sixty. And remember what H₂ is: the easiest molecule there is, two qubits after tapering, 15 Pauli terms, the shallowest VQE circuit you'll ever run. Every real molecule is worse — more electrons, more terms, deeper circuits, more exposure to exactly the noise that's already winning here. This chart is the *best case*. The honest NISQ limit, drawn as a curve: the ideal VQE line sits on top of the exact FCI line, and the noisy line floats above it like a bad ceiling. You could squint at it and say "roughly the right shape" — but chemistry doesn't grade on rough shape. A reaction barrier wrong by 40 mHa is a reaction you can't predict.
+Read those two numbers again. We're not off by a little. We're off by a factor of twenty to sixty. And remember what H₂ is: the easiest molecule there is, two qubits after tapering, 5 Pauli terms (II, IZ, ZI, ZZ, YY), the shallowest VQE circuit you'll ever run. Every real molecule is worse — more electrons, more terms, deeper circuits, more exposure to exactly the noise that's already winning here. This chart is the *best case*. The honest NISQ limit, drawn as a curve: the ideal VQE line sits on top of the exact FCI line, and the noisy line floats above it like a bad ceiling. You could squint at it and say "roughly the right shape" — but chemistry doesn't grade on rough shape. A reaction barrier wrong by 40 mHa is a reaction you can't predict.
 
 ![VQE dissociation curve](../charts/15_vqe_h2.png)
 
@@ -58,4 +58,4 @@ Next episode: the error that adds up in the worst possible way.
 
 - The noise is phenomenological Monte-Carlo, not a full Lindblad master equation. The 38–96 mHa drag is representative of the noise regime, not a prediction about any specific device.
 - VQE was run on H₂, the easiest molecule there is. Larger molecules have deeper circuits, more terms, worse noise — everything here is a best case.
-- The "ideal" run used a classical optimizer with exact gradients. On real hardware, gradient estimation is itself noisy, which only makes the optimizer's job harder.
+- The "ideal" run used an exhaustive grid scan — the true minimum, not an optimizer's best guess. The noisy run was re-optimized with Nelder-Mead from the ideal start point. On real hardware, gradient estimation is itself noisy, which only makes the optimizer's job harder.

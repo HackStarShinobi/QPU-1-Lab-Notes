@@ -52,7 +52,7 @@ Now go break something yourself.
 
 ## What's next (for the series)
 
-- The episode drafts and charts live in the open — code, demos, and all fifteen charts, free to run and argue with.
+- The episode drafts and all fifteen charts live in the open, free to read and argue with.
 - Each episode is being cut into a vertical Short: one chart, one number, sixty seconds.
 - The playground app spec is next. If you want a particular experiment from this series in it, that's the time to say so.
 

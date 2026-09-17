@@ -40,6 +40,7 @@ Next episode, I stop defending the qubit and start correcting it: the three-qubi
 
 ## Honest limits
 
+- The breaking points quoted above come from the fitted-curve analysis; the first-pass threshold-crossing analysis was biased early (noisier curves break "earlier") and was discarded.
 - The breaking points are specific to this shock strength (150 mK), this Ramsey wait (60 µs), and this machine's gate fidelities. Change any of them and the optimum spacing moves.
 - The programmed 47.5 µs echo T2 is a model parameter, not a measured device constant — the 3% agreement validates the analysis pipeline, not the physics.
 - Real decoupling sequences contend with pulse crosstalk, leakage out of the computational subspace, and heating from the pulses themselves. My π-pulses are clean two-level operations; reality is messier.
